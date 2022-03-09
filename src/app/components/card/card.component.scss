@@ -1,0 +1,77 @@
+$fire: #eca110;
+$water: #219ebc;
+$grass: #84cf6a;
+$poison: #b280be;
+$bug: #4b7f52;
+$flying: #6e753a;
+$normal: #A4ACAF;
+
+.grass {
+  background-color: $grass;
+}
+
+.poison {
+  background-color: $poison;
+  color: white;
+}
+
+.fire {
+  background-color: $fire;
+  color: white;
+}
+
+.flying {
+    background: rgb(164,172,175);
+    background: linear-gradient(0deg, rgba(164,172,175,1) 50%, rgba(60,199,239,1) 50%);
+}
+
+.water {
+  background-color: $water;
+  color: white;
+}
+
+.bug {
+  background-color: $bug;
+  color: white;
+}
+
+.normal {
+  background-color: $normal;
+}
+
+.card {
+  h2 {
+    width: 8em;
+    margin: 0;
+    margin-left: 1.6em;
+    padding: 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+  }
+  figure {
+    img {
+      width: 8em;
+      height: 9em;
+      background-color: #f2f2f2;
+      padding: 2em;
+      border-radius: 10px;
+    }
+    figcaption {
+      color: #919191;
+      font-weight: 600;
+    }
+  }
+  p{
+      width: fit-content;
+      padding: 0.3em 1em;
+      border-radius: 5px;
+      font-size: 0.8em;
+  }
+  .info{
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     gap:0.3em;
+     margin-left: 2.5em;
+  } 
+}
