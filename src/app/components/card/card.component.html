@@ -1,8 +1,8 @@
-<div>
+<div class="card">
     <figure>
         <img src="{{pokemon.image}}" alt="{{pokemon.name}}">
-        <figcaption>{{pokemon.id}}</figcaption>
+        <figcaption>{{pokemon.id < 10 ? 'N.º00'+pokemon.id : 'N.º0'+pokemon.id}}</figcaption>
     </figure>
-    <h2>{{pokemon.name}}</h2>
-    <span *ngFor="let type of pokemon.types">{{type}}</span>
+    <h2>{{pokemon.name.slice(0,1).toUpperCase()+pokemon.name.slice(1)}}</h2>
+    <div class="info"><p *ngFor="let type of pokemon.types" class="{{type}} type">{{type.slice(0,1).toUpperCase()+type.slice(1)}}</p></div>
 </div>

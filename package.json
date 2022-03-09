@@ -22,6 +22,7 @@
     "node-sass": "^7.0.1",
     "pokenode-ts": "^1.12.0",
     "rxjs": "~7.5.0",
+    "sort-by-typescript": "^1.2.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

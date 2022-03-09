@@ -1,6 +1,7 @@
+import axios from 'axios';
 import { Injectable } from '@angular/core';
 import { PokemonClient } from 'pokenode-ts';
-import axios from 'axios';
+import { sortBy } from 'sort-by-typescript';
 import { pokemon } from '../classes/pokemon';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class ApiService {
     for (let i = 1; i < 21; i++) {
       axios(`https://pokeapi.co/api/v2/pokemon/${i}`)
         .then((data) => {
-          console.log(data.data.sprites.other.dream_world.front_default)
+          this.pokeArr.sort(sortBy('id'))
           this.pokeArr.push({
             "name": data.data.name,
             "id": data.data.id,
