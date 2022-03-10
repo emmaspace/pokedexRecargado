@@ -1,10 +1,21 @@
-$fire: #eca110;
-$water: #219ebc;
-$grass: #84cf6a;
-$poison: #b280be;
-$bug: #4b7f52;
-$flying: #6e753a;
+$fire: #FD7D24;
+$water: #4592C4;
+$grass: #9BCC50;
+$poison: #B97FC9;
+$bug: #729F3F;
+$flying: linear-gradient(0deg, rgba(164,172,175,1) 50%, rgba(60,199,239,1) 50%);;
 $normal: #A4ACAF;
+$fighting:#D56724;
+$electric:#EED535;
+$ground:linear-gradient(0deg, #F7DE3F 50%, #AB9842 50%);;
+$rock:#A38C21;
+$psychic:#F366B9;
+$ice:#51C4E7;
+$ghost:#7B62A3;
+$steel:#9EB7B8;
+$dragon:linear-gradient(0deg, #53A4CF 50%, #F16E56 50%);
+$dark:#707070;
+$fairy:#FDB9E9;
 
 .grass {
   background-color: $grass;
@@ -21,8 +32,7 @@ $normal: #A4ACAF;
 }
 
 .flying {
-    background: rgb(164,172,175);
-    background: linear-gradient(0deg, rgba(164,172,175,1) 50%, rgba(60,199,239,1) 50%);
+  background: $flying;
 }
 
 .water {
@@ -39,6 +49,55 @@ $normal: #A4ACAF;
   background-color: $normal;
 }
 
+.fighting{
+  background-color: $fighting;
+  color: white;
+}
+
+.electric{
+  background-color: $electric;
+}
+
+.ground{
+  background: $ground;
+}
+
+.rock{
+  background-color: $rock;
+}
+
+.psychic{
+  background-color: $psychic;
+  color: white;
+}
+
+.ice{
+  background-color: $ice;
+}
+
+.ghost{
+  background-color: $ghost;
+  color: white;
+}
+
+.steel{
+  background-color: $steel;
+}
+
+.dark{
+  background-color: $dark;
+  color: white;
+}
+
+.fairy{
+  background-color: $fairy;
+}
+
+.dragon{
+  background: $dragon;
+  color: white;
+}
+
 .card {
   h2 {
     width: 8em;
@@ -46,14 +105,13 @@ $normal: #A4ACAF;
     margin-left: 1.6em;
     padding: 0;
     font-size: 1.5em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
   figure {
     img {
-      width: 8em;
-      height: 9em;
+      width: 90%;
       background-color: #f2f2f2;
-      padding: 2em;
+      padding: 1em;
       border-radius: 10px;
     }
     figcaption {
@@ -62,13 +120,15 @@ $normal: #A4ACAF;
     }
   }
   p{
-      width: fit-content;
-      padding: 0.3em 1em;
+      width: 6em;
+      text-align: center;
+      padding: 0.2em 0;
       border-radius: 5px;
-      font-size: 0.8em;
+      font-size: 0.7em;
+      font-weight: 100;
   }
   .info{
-     width: 100%;
+     width: fit-content;
      display: flex;
      flex-direction: row;
      gap:0.3em;
