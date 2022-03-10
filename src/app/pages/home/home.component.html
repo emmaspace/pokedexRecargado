@@ -1,1 +1,4 @@
-<div id="home"><app-grid></app-grid></div>
+<div id="home">
+    <app-random-button (arrRandom)="receiveData($event)"></app-random-button>
+    <app-grid [arrRandom]="arrRandom"></app-grid>
+</div>
