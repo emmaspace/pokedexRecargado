@@ -126,12 +126,13 @@ $fairy:#FDB9E9;
       border-radius: 5px;
       font-size: 0.7em;
       font-weight: 100;
+      margin-right: 0.5em;
   }
   .info{
      width: fit-content;
      display: flex;
      flex-direction: row;
-     gap:0.3em;
+     gap:0.5em;
      margin-left: 2.5em;
   } 
 }
