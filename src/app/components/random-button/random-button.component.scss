@@ -1,0 +1,20 @@
+#surprise {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #30a7d7;
+  padding: 1em 4em;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: background-color 0.2s;
+  margin: 0 auto;
+}
+
+#surprise:hover, #surprise:focus{
+    border: none;
+    background-color: #1982B1;
+}
+
+#surprise i{
+    transform: rotate(60deg);
+    margin-right: 0.5em;
+}
