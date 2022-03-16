@@ -1,20 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { pokemon } from 'src/app/classes/pokemon';
+import { Component } from '@angular/core';
+import { CustomPokemon } from 'src/app/interfaces/pokemon';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  arrRandom:Array<pokemon> = []
+export class HomeComponent {
+  arrRandom: CustomPokemon[] = []
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
-  receiveData(event:any){
-    this.arrRandom=event
-    //console.log(event)
+  receiveData(event: CustomPokemon[]) {
+
+    this.arrRandom = event
+
   }
 }

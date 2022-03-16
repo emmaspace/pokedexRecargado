@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RandomButtonComponent } from './random-button.component';
 
 describe('RandomButtonComponent', () => {
