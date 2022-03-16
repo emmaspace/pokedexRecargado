@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { pokemon } from 'src/app/classes/pokemon';
+import { CustomPokemon } from 'src/app/interfaces/pokemon';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -8,17 +8,13 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
-  @Input() arrRandom!:Array<pokemon>
+  @Input() arrRandom!: CustomPokemon[]
   
   constructor(public getPokemon:ApiService) { }
 
-  
-
-  ngOnInit(){
+    ngOnInit(){
     this.arrRandom = this.getPokemon.pokeapi(false)
   }
 
-  fillRandom(){
-    console.log(this.arrRandom)
-  }
+ 
 }
