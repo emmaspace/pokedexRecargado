@@ -1,6 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-
+import { Component, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-random-button',
   templateUrl: './random-button.component.html',
@@ -11,8 +10,7 @@ export class RandomButtonComponent {
   
   constructor(public getPokemon:ApiService) { }
 
- 
-  getRandom(){
+  getRandom():void{
     this.arrRandom.emit(this.getPokemon.pokeapi(true))
   }
 }
