@@ -1,4 +1,7 @@
 <div id="home">
-    <section class="buttons"><app-random-button (arrRandom)="receiveData($event)"></app-random-button></section>
+    <section class="buttons">
+        <app-random-button (arrRandom)="receiveData($event)"></app-random-button>
+        <app-order-select></app-order-select>
+    </section>
     <app-grid [arrRandom]="arrRandom"></app-grid>
 </div>

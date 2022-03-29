@@ -1,0 +1,5 @@
+<select (change)="sendOrderBy(selectOption?.value)" option.value>
+    <option #selectOption value="{{option.value}}" *ngFor="let option of options" {{option.state}}>
+       {{option.name}}
+    </option>
+ </select>
