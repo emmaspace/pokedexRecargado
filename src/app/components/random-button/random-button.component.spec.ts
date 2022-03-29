@@ -1,6 +1,6 @@
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CustomPokemon } from './../../interfaces/pokemon';
 import { RandomButtonComponent } from './random-button.component';
 class mockApiService {
@@ -27,8 +27,8 @@ describe('RandomButtonComponent', () => {
   beforeEach(() => {
     service = new mockApiService();
     component = new RandomButtonComponent(service);
-    // spyOn(component, 'getRandom');
   });
+
   afterEach(() => {
     service = null;
     component = null;
@@ -54,18 +54,23 @@ describe('RandomButtonComponent', () => {
     ]);
   });
 
-  /* it('should return the arrRandom when using getPokemon()', async () => {
-    const fixture = TestBed.createComponent(RandomButtonComponent);
+  it('should return the arrRandom when using getPokemon()', async () => {
+    let fixture: ComponentFixture<RandomButtonComponent>;
+
+    TestBed.configureTestingModule({
+      declarations: [RandomButtonComponent],
+    });
+
+    fixture = TestBed.createComponent(RandomButtonComponent);
+    component = fixture.componentInstance;
+    const spy = spyOn(component, 'getRandom');
+
+    fixture.detectChanges();
+    let buttonElement = fixture.debugElement.query(By.css('button'));
+
+    buttonElement.triggerEventHandler('click', spy);
     fixture.detectChanges();
 
-    const debug: DebugElement = fixture.debugElement;
-
-    const buttonDe = debug.query(By.css('button'));
-    buttonDe.triggerEventHandler('click', null);
-    // const button: HTMLElement = buttonDe.nativeElement;
-    spyOn<RandomButtonComponent | null>(component, 'getRandom' as never);
-    fixture
-      .whenStable()
-      .then((res) => expect(component?.getRandom).toHaveBeenCalledTimes(1));
-  }); */
+    expect(component?.getRandom).toHaveBeenCalledTimes(1);
+  });
 });
