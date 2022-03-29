@@ -9,7 +9,7 @@ import { CustomPokemon, Pokemon, Type } from '../interfaces/pokemon';
 export class ApiService {
 
   constructor() { }
-  pokeapi(random:boolean) {
+  pokeapi(random:boolean):CustomPokemon[] {
     let randomArr: number[] = []
     let pokeArr: CustomPokemon[]= []
     let num: number
