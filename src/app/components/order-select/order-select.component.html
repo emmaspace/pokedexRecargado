@@ -1,7 +1,6 @@
-<form [formGroup]="order">
-    <select (change)="sendOrderBy()" option.value>
-        <option [ngValue]="{{option.value}}" *ngFor="let option of options" {{option.state}}>
-            {{option.name}}
-        </option>
-    </select>
-</form>
+<ng-select appearance="outline" class="custom" [(ngModel)]="selectedValue" (ngModelChange)="sendOrderBy()">
+  <ng-option [value]="" disabled selected>Sort results by</ng-option>
+  <ng-option *ngFor="let option of options" [value]="option.value">
+      {{ option.name }}
+    </ng-option>
+</ng-select>

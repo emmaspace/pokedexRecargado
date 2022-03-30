@@ -1,34 +1,38 @@
-import { Component, EventEmitter, NgModule, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  Component,
+  EventEmitter,
+  NgModule,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { NgSelectConfig } from '@ng-select/ng-select';
 
 @Component({
   selector: 'app-order-select',
   templateUrl: './order-select.component.html',
-  styleUrls: ['./order-select.component.scss']
+  styleUrls: ['./order-select.component.scss'],
 })
+export class OrderSelectComponent implements OnInit {
+  @Output() sendOption = new EventEmitter();
+  ngOnInit(){this.sendOrderBy()}
 
-
-export class OrderSelectComponent{
-  @Output() selectedOption = new EventEmitter()
-
-  selectOption: HTMLElement | undefined
-  order: FormGroup
+  selectedValue: string = '';
 
   options = [
-    { name: "Sort results by", value: "", state:"disabled" },
-    { name: "Lowest Number (First)", value: "Lowest id", state:"enabled" },
-    { name: "Highest Number (First)", value: "Highest id", state:"enabled" },
-    { name: "A-Z", value: "A-Z", state:"enabled" },
-    { name: "Z-A", value: "Z-A", state:"enabled" }
-  ]
-  
-  
-  constructor() {
-    this.order = new FormGroup({option: new FormControl(null)})
-   }
+    { name: 'Lowest Number (First)', value: 'Lowest id' },
+    { name: 'Highest Number (First)', value: 'Highest id' },
+    { name: 'A-Z', value: 'A-Z' },
+    { name: 'Z-A', value: 'Z-A' },
+  ];
 
-  sendOrderBy():void{
-    console.log(this.selectedOption)
-    this.selectedOption.emit(this.selectedOption)
+  constructor(/* private config: NgSelectConfig */) {
+    /* this.config.notFoundText = 'Custom Not Found';
+    this.config.appendTo = 'body';
+    this.config.bindValue = 'value'; */
+  }
+
+  sendOrderBy(): void {
+    this.sendOption.emit(this.selectedValue)
   }
 }

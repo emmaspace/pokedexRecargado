@@ -5,16 +5,17 @@ import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.scss']
+  styleUrls: ['./grid.component.scss'],
 })
 export class GridComponent implements OnInit {
-  @Input() arrRandom!: CustomPokemon[]
-  
-  constructor(public getPokemon:ApiService) { }
+  @Input() arrRandom!: CustomPokemon[];
+  @Input() sendOption!: string;
 
-    ngOnInit(){
-    this.arrRandom = this.getPokemon.pokeapi(false)
+  constructor(public getPokemon: ApiService) {}
+
+  ngOnInit() {
+    this.arrRandom = this.getPokemon.pokeapi(false);
+    console.log(this.sendOption)
   }
 
- 
 }
