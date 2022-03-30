@@ -1,0 +1,7 @@
+<form [formGroup]="order">
+    <select (change)="sendOrderBy()" option.value>
+        <option [ngValue]="{{option.value}}" *ngFor="let option of options" {{option.state}}>
+            {{option.name}}
+        </option>
+    </select>
+</form>
