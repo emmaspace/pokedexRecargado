@@ -17,7 +17,7 @@ export class OrderSelectComponent implements OnInit {
   @Output() sendOption = new EventEmitter();
   ngOnInit(){this.sendOrderBy()}
 
-  selectedValue: string = '';
+  selectedValue: string | undefined = undefined;
 
   options = [
     { name: 'Lowest Number (First)', value: 'Lowest id' },
