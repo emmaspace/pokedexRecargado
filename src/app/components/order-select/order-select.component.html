@@ -1,5 +1,4 @@
-<ng-select appearance="outline" class="custom" [(ngModel)]="selectedValue" (ngModelChange)="sendOrderBy()">
-  <ng-option [value]=undefined disabled selected>Sort results by</ng-option>
+<ng-select placeholder="Sort results by" dropdownPosition="bottom" appendTo="body"	[searchable]=false appearance="outline" class="custom" [(ngModel)]="selectedValue" (ngModelChange)="sendOrderBy()">
   <ng-option *ngFor="let option of options" [value]="option.value">
       {{ option.name }}
     </ng-option>
