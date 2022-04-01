@@ -1,12 +1,11 @@
-@import "~@ng-select/ng-select/themes/material.theme.css";
-
-.ng-select.custom {
-  border: 0px;
-  min-height: 0px;
-  border-radius: 0;
+#form-select{
+  width: 15em;
 }
 
-.ng-select.custom ::ng-deep .ng-select-container {
-  min-height: 0px;
-  border-radius: 0;
+mat-select{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 }

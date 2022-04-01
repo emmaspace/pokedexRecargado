@@ -1,5 +1,6 @@
-<ng-select placeholder="Sort results by" dropdownPosition="bottom" appendTo="body"	[searchable]=false appearance="outline" class="custom" [(ngModel)]="selectedValue" (ngModelChange)="sendOrderBy()">
-  <ng-option *ngFor="let option of options" [value]="option.value">
-      {{ option.name }}
-    </ng-option>
-</ng-select>
+<mat-form-field appearance="outline" id="form-select" color="primary">
+  <mat-icon svgIcon="thumbs-up" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+  <mat-select [(ngModel)]="selectedValue" (ngModelChange)="sendOrderBy()" placeholder="Sort results by...">
+    <mat-option *ngFor="let option of options" [value]="option.value">{{ option.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
